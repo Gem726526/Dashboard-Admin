@@ -1,0 +1,33 @@
+.button {
+	margin-top: 35px;
+	color: #fff;
+
+	&__input {
+		border: none;
+		font-size: 17px;
+		font-weight: 500;
+		letter-spacing: 1px;
+		border-radius: 6px;
+		padding: 0 35px;
+		background-color: $primary-color;
+		cursor: pointer;
+		transition: all 0.3s ease;
+		@include size(100%, 100%);
+		color: #fff;
+		&:hover {
+			background-color: $secondary-color;
+		}
+	}
+	&__add-user {
+		background: $sucess-color;
+		&:hover {
+			background-color: $sucess-color-light;
+		}
+	}
+	&__cancel {
+		background: $error-color;
+		&:hover {
+			background-color: $error-color-dark;
+		}
+	}
+}

@@ -1,0 +1,32 @@
+.table {
+    width: 100%;
+    padding: 0px 100px 100px 100px;
+    background: $light-color;
+    
+
+    margin-top: 0;
+    font-size: 24px;
+    &__body {
+        margin: 0 50px;
+        padding: 0 50px;
+    }
+    &__row {
+        padding: 0 50px;
+        border: 1px solid $dark-color;
+    }
+    &__head {
+        font-weight: lighter;
+        padding: 0 5px;
+        border: 1px solid $dark-color;
+        margin: 0;
+        text-transform: uppercase;
+        background-color: $dark-color;
+        color: $light-color;
+    }
+
+    &__data {
+        padding: 0 5px;
+        text-align: center;
+        border-bottom: 1px solid $dark-color;
+    }
+}

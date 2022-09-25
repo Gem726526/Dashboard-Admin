@@ -1,0 +1,36 @@
+.main {
+    .container {
+        height: auto;
+    }
+}
+.flex-button {
+    display: flex;
+    justify-content: space-between;
+}
+
+.add-item-popup {
+    display: none;
+    &.active {
+        background: $primary-color;
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 0px;
+        left: 0px;
+        z-index: 1000;
+        @include centerItems();
+    }
+}
+.edit-item-popup {
+    display: none;
+    &.active {
+        background: $primary-color;
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 0px;
+        left: 0px;
+        z-index: 1000;
+        @include centerItems();
+    }
+}

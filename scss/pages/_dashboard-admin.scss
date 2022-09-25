@@ -1,0 +1,19 @@
+.admin {
+    height: 100vh;
+    margin-top: 0;
+    padding: 20px;
+}
+.add-new {
+    background-color: $light-color;
+
+    text-align: right;
+    padding: 10px 100px;
+
+    &__button {
+        font-size: 24px;
+        border: none;
+        padding: 10px;
+        background-color: $sucess-color;
+        color: $light-color;
+    }
+}

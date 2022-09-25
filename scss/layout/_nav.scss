@@ -1,0 +1,32 @@
+.nav {
+    display: flex;
+    height: 100vh;
+    min-height: 520px;
+    border: 2px solid $sucess-color;
+    background-color: $light-color;
+    &__left {
+        width: 100%;
+    }
+}
+.list {
+    color: $dark-color;
+    padding: 0 40px;
+    margin-top: 40px;
+    border-top: 1px solid $dark-color;
+
+    &__items {
+        width: 100%;
+        list-style: none;
+        font-size: 24px;
+        padding: 5px;
+        position: relative;
+        margin-top: 5px;
+        overflow: hidden;
+        &--content {
+            padding-left: 20px;
+        }
+        &:hover {
+            border: 1px solid $dark-color;
+        }
+    }
+}

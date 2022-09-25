@@ -1,0 +1,30 @@
+.container {
+    max-width: 430px;
+    @include size(100%);
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px $dark-color;
+    overflow: hidden;
+    margin: 0 20px;
+    
+
+    //css for login-signup change logic
+    &.active {
+        .login {
+            margin-left: -50%;
+            opacity: 0;
+            transition: margin-left 0.18s ease, opacity 0.15s ease;
+        }
+        .signup {
+            opacity: 1;
+            transition: opacity 0.2s ease;
+        }
+        .form-container {
+            height: auto;
+        }
+    }
+    .signup {
+        opacity: 0;
+        transition: opacity 0.09s ease;
+    }
+}

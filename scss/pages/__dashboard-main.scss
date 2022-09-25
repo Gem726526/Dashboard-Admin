@@ -1,0 +1,26 @@
+.main {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    &__card {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background: $light-color;
+        color: $dark-color;
+        margin: 0 10px;
+        padding: 100px;
+        &--icon {
+            font-size: 60px;
+        }
+        &--content {
+            font-size: 24px;
+            color: $error-color;
+        }
+        &__table {
+            border: 1px solid $light-color;
+        }
+    }
+}
