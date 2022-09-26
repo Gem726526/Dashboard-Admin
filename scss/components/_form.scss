@@ -42,6 +42,7 @@
                 border-top: 2px solid transparent;
                 transition: all 0.2s ease;
                 &.error{
+                    color:$error-color;
                     border-bottom: 2px $error-color solid;
                     &::placeholder{
                         color: $error-color;
@@ -53,6 +54,16 @@
                 &.success{
                     border-bottom: 2px $sucess-color-light solid;
                 }
+            
+               
+                
+            }
+            &.error{
+                small{
+                    color: $error-color;
+                }
+               
+            
             }
         }
         .text {
@@ -81,3 +92,6 @@
         }
     }
 }
+
+
+//color for small

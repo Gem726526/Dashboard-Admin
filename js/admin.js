@@ -49,6 +49,7 @@ function editUser(userIndex) {
   const userToBeEdited = users[userIndex];
   document.querySelector(".edit-name").value = userToBeEdited.Name;
   document.querySelector(".edit-email").value = userToBeEdited.Email;
+
 }
 //function to save edit to the table
 function saveEdits(e) {

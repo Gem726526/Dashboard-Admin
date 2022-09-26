@@ -248,6 +248,7 @@ body {
   transition: all 0.2s ease;
 }
 .form-container .form .input__field.error {
+  color: rgb(226, 7, 7);
   border-bottom: 2px rgb(226, 7, 7) solid;
 }
 .form-container .form .input__field.error::-moz-placeholder {
@@ -264,6 +265,9 @@ body {
 }
 .form-container .form .input__field.success {
   border-bottom: 2px #47ac1c solid;
+}
+.form-container .form .input.error small {
+  color: rgb(226, 7, 7);
 }
 .form-container .form .text {
   color: #333;

@@ -1,116 +1,191 @@
-//function for validating Name
-const checkUsername = (nameClass) => {
+//FUNCTION TO CHECK NAME
+const checkUsername = (usernameEl) => {
   let valid = false;
+
   const min = 3,
     max = 25;
-    const name = nameClass.value;
-  if (!isRequired(name)) {
-    nameClass.classList.add("error");
-    console.log("name cannot be empty");
-  } else if (!isBetween(name.length, min, max)) {
-    nameClass.classList.add("error");
-    console.log(`Username must be between ${min} and ${max} characters.`);
+
+  const username = usernameEl.value;
+
+  if (!isRequired(username)) {
+    showError(usernameEl, "Username cannot be blank.");
+  } else if (!isBetween(username.length, min, max)) {
+    showError(
+      usernameEl,
+      `Username must be between ${min} and ${max} characters.`
+    );
   } else {
-    nameClass.classList.add("success");
-    console.log("valid name");
+    showSuccess(usernameEl);
     valid = true;
   }
   return valid;
 };
 
-//function for validating Email
-const checkEmail = (emailClass) => {
+//FUNCTION TO CHECK EMAIL
+const checkEmail = (emailEl) => {
   let valid = false;
-  const email = emailClass.value;
+  const email = emailEl.value;
   if (!isRequired(email)) {
-    emailClass.classList.add("error");
-    console.log("Email cannot be empty");
-  }
-  else if (!isEmailValid(email)) {
-    emailClass.classList.add("error");
-     console.log('Inavalid Email');
-  }
-  else {
-    emailClass.classList.add("success");
-    console.log("Valid email");
+    showError(emailEl, "Email cannot be blank.");
+  } else if (!isEmailValid(email)) {
+    showError(emailEl, "Email is not valid.");
+  } else {
+    showSuccess(emailEl);
     valid = true;
   }
   return valid;
 };
 
-////function for validating Password
-
-const checkPassword = (passwordClass) => {
+//FUNTION TO CHECK PASSWORD
+const checkPassword = (passwordEl) => {
   let valid = false;
-  const password =passwordClass.value;
+
+  const password = passwordEl.value;
+
   if (!isRequired(password)) {
-    passwordClass.classList.add("error");
-    console.log("Password cant be empty");
-  } 
-  else if (!isPasswordSecure(password)) {
-    passwordClass.classList.add("error");
-    console.log("invalid Password");
-  } 
-  else { 
-    passwordClass.classList.add("success");
-    console.log("valid Password");
+    showError(passwordEl, "Password cannot be blank.");
+  } else if (!isPasswordSecure(password)) {
+    showError(passwordEl, "Password must has at least 4 characters");
+  } else {
+    showSuccess(passwordEl);
     valid = true;
   }
+
   return valid;
 };
-////function for validating confirm Password
-const confirmPasswrod = (password, newPassword) => {
 
-
+//FUNTION TO CHECK CONFIRM PASSWROD AND PASSWORD MATCH
+const checkConfirmPassword = (passwordEl, confirmPasswordEl) => {
   let valid = false;
-  if (password.value == newPassword.value) {
-    password.classList.add('success');
-    console.log("Both password Match");
+  // check confirm password
+  const confirmPassword = confirmPasswordEl.value;
+  const password = passwordEl.value;
+
+  if (!isRequired(confirmPassword)) {
+    showError(confirmPasswordEl, "Please enter the password again");
+  } else if (password !== confirmPassword) {
+    showError(confirmPasswordEl, "The password does not match");
+  } else {
+    showSuccess(confirmPasswordEl);
     valid = true;
   }
-  else{
-    password.classList.add('error');
-    newPassword.classList.add('error');
-    console.log("Please Enter same Password");
-  }
- 
+
   return valid;
 };
 
-//is required helper function
+//HELEPR FUNCTION FOR EMAIL REGEX
+const isEmailValid = (email) => {
+  const re = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.[a-zA-Z]{2,3})+$/;
+  return re.test(email);
+};
+
+//HELPER FUNCTION FOR PASSWORD REGEX
+const isPasswordSecure = (password) => {
+  const re = new RegExp("^(?=.{4,})");
+  return re.test(password);
+};
+
+//function to chceck if the input is empty
 const isRequired = (value) => (value === "" ? false : true);
-//is between helper function
+
+//function to check length of input is in between or not
 const isBetween = (length, min, max) =>
   length < min || length > max ? false : true;
 
- //helper function for ispassword stong
- const isPasswordSecure = (password) => {
-    const re = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.{4,})");
-    return re.test(password);
-}; 
+//function to show error message
+const showError = (input, message) => {
+  // get the form-field element
+  const formField = input.parentElement;
+  // add the error class
+  formField.classList.remove("success");
+  formField.classList.add("error");
 
-// is Emailvalid helper function
-const isEmailValid = (email) => {
-    const re =/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.[a-zA-Z]{2,3})+$/;
-    return re.test(email);
+  // show the error message
+  const error = formField.querySelector("small");
+  error.textContent = message;
 };
 
+//function to remove error class and message(showsuccess)
+const showSuccess = (input) => {
+  // get the form-field element
+  const formField = input.parentElement;
+
+  // remov e the error class
+  formField.classList.remove("error");
+  formField.classList.add("success");
+
+  // hide the error message
+  const error = formField.querySelector("small");
+  error.textContent = "";
+};
+
+//******form validations  work starts from here********
+
+//validating signup form validation
+
+const signUpForm = document.querySelector("#signup-form");
 function signUpFormValidation() {
   const signupEmail = document.querySelector(".signup-email"),
     signupName = document.querySelector(".signup-name"),
     password = document.querySelector(".signup-password"),
     newPassword = document.querySelector(".confirm-password");
-    console.log(signupName);
-    const isFormValid = (
-    checkUsername(signupName) &&
-    checkEmail(signupEmail) &&
-    checkPassword(password) &&
-    confirmPasswrod(password, newPassword))
-    console.log(isFormValid);
-    return isFormValid;
+  // validate fields
+  let isUsernameValid = checkUsername(signupName),
+    isEmailValid = checkEmail(signupEmail),
+    isPasswordValid = checkPassword(password),
+    isConfirmPasswordValid = checkConfirmPassword(password, newPassword);
+
+  let isFormValid =
+    isUsernameValid &&
+    isEmailValid &&
+    isPasswordValid &&
+    isConfirmPasswordValid;
+
+  return isFormValid;
+}
+if (signUpForm){
+signUpForm.addEventListener("submit", signUpFormValidation);
 }
 
-document.querySelector("#signup-form").addEventListener("submit", signUpFormValidation());
+//validating login form::
+const logInForm = document.querySelector("#login-form");
+function logInFormValidation() {
+  const logInEmail = document.querySelector(".login-email"),
+    password = document.querySelector(".login-password");
 
+  // validate fields
+  let isEmailValid = checkEmail(logInEmail),
+    isPasswordValid = checkPassword(password);
 
+  let isFormValid = isEmailValid && isPasswordValid;
 
+  return isFormValid;
+}
+
+if (logInForm){
+logInForm.addEventListener("submit", logInFormValidation);
+}
+
+//edit user form validation
+const editUserForm =document.querySelector("#edit-user-form");
+function editUserFormValidation(){
+  const name= document.querySelector('.edit-name'),
+  email = document.querySelector('.edit-email');
+  let isFormValid = checkUsername(name)&& checkEmail(email);
+  return isFormValid;
+}
+if(editUserForm){
+editUserForm.addEventListener("submit", editUserFormValidation);
+}
+//add user form validation
+
+const addUserForm =document.querySelector("#add-user-form");
+function addUserFormValidation(){
+  const name= document.querySelector('.add-name'),
+  email = document.querySelector('.add-email');
+  let isFormValid = checkUsername(name)&& checkEmail(email);
+  return isFormValid;
+}
+if(addUserForm){
+addUserForm.addEventListener("submit", addUserFormValidation);
+}

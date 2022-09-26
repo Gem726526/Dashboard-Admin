@@ -21,15 +21,15 @@
                 <div class="form login">
                     <h1 class="title">Login</h1>
 
-                    <form>
+                    <form id="login-form" action="./dashboard.html" onsubmit="return logInFormValidation();">
                         <div class="input">
-                            <input class="input__field email login-email" type="text" placeholder="Enter your email"
-                                required>
+                            <input class="input__field  login-email" type="text" placeholder="Enter your email"
+                                >
                             <i class="uil uil-envelope icon"></i>
                             <small></small>
                         </div>
                         <div class="input">
-                            <input class="input__field password  password-text" type="password"
+                            <input class="input__field password login-password password-text" type="password"
                                 placeholder="Enter your password">
                             <i class="uil uil-lock icon"></i>
                             <i class="uil uil-eye-slash show-hide-password"></i>
