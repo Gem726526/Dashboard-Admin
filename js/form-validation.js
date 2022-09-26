@@ -143,8 +143,8 @@ function signUpFormValidation() {
 
   return isFormValid;
 }
-if (signUpForm){
-signUpForm.addEventListener("submit", signUpFormValidation);
+if (signUpForm) {
+  signUpForm.addEventListener("submit", signUpFormValidation);
 }
 
 //validating login form::
@@ -162,30 +162,38 @@ function logInFormValidation() {
   return isFormValid;
 }
 
-if (logInForm){
-logInForm.addEventListener("submit", logInFormValidation);
+if (logInForm) {
+  logInForm.addEventListener("submit", logInFormValidation);
 }
 
 //edit user form validation
-const editUserForm =document.querySelector("#edit-user-form");
-function editUserFormValidation(){
-  const name= document.querySelector('.edit-name'),
-  email = document.querySelector('.edit-email');
-  let isFormValid = checkUsername(name)&& checkEmail(email);
+const editUserForm = document.querySelector("#edit-user-form");
+function editUserFormValidation() {
+  const name = document.querySelector(".edit-name"),
+    email = document.querySelector(".edit-email");
+  let isFormValid = checkUsername(name) && checkEmail(email);
+  if (isFormValid == false) {
+    document.querySelector(".edit-item-popup").classList.add("active");
+  }
   return isFormValid;
 }
-if(editUserForm){
-editUserForm.addEventListener("submit", editUserFormValidation);
+if (editUserForm) {
+  editUserForm.addEventListener("click", editUserFormValidation);
 }
 //add user form validation
 
-const addUserForm =document.querySelector("#add-user-form");
-function addUserFormValidation(){
-  const name= document.querySelector('.add-name'),
-  email = document.querySelector('.add-email');
-  let isFormValid = checkUsername(name)&& checkEmail(email);
+const addUserForm = document.querySelector("#add-user-form");
+function addUserFormValidation() {
+  const name = document.querySelector(".add-name"),
+    email = document.querySelector(".add-email");
+  let isFormValid = checkUsername(name) && checkEmail(email);
+  if ((isFormValid = true)) {
+    console.log("true");
+  } else {
+    console.log("false");
+  }
   return isFormValid;
 }
-if(addUserForm){
-addUserForm.addEventListener("submit", addUserFormValidation);
+if (addUserForm) {
+  addUserForm.addEventListener("submit", addUserFormValidation);
 }

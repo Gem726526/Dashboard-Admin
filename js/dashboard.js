@@ -4,20 +4,29 @@ const totalUser = document.querySelector(".total-users__content"),
 let usersFromStorage = window.localStorage.getItem("UserList");
 
 let users = usersFromStorage ? JSON.parse(usersFromStorage) : [];
-
+const topUser =[];
 function render() {
-  totalUser.innerHTML = users.length + "   Users";
+  totalUser.innerHTML =  users.length + " Users" ;
 
   users.forEach((user, i) => {
     //adding data to table
+    
     if (i < 3) {
-      topUsers.insertAdjacentHTML(
-        "afterbegin",
-        `<p class = "top-users__name">${user.Name} </p>`
-      );
+      
+      topUser.push[user.Name]
+      
     } else {
     }
   });
+  topUser.forEach((user,i)=>{
+    topUsers.innerHTML = `<p class = "top-users__name">${user.Name} </p>` 
+  })
 }
-
 render();
+
+
+function signOut(){
+  return window.localStorage.clear();
+  
+
+}

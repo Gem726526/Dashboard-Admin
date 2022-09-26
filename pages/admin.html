@@ -16,25 +16,25 @@
             <div class="nav__left">
                 <ul class="list">
                     <li class="list__items">
-                        <a href="./dashboard.html">
+                        <a  class ="list__link" href="./dashboard.html">
                             <i class="uil uil-airplay icon"></i>
-                            <p class="list__items--content">
+                            <p class="list__content">
                                 Dashboard
                             </p>
                         </a>
                     </li>
                     <li class="list__items">
-                        <a href="./admin.html">
+                        <a class ="list__link" href="./admin.html">
                             <i class="uil uil-user-circle icon"></i>
-                            <p class="list__items--content">
+                            <p class="list__content">
                                 Admin
                             </p>
                         </a>
                     </li>
                     <li class="list__items">
-                        <a href="./index.html">
+                        <a class ="list__link" href="./about.html">
                         <i class="uil uil-info-circle icon"></i>
-                        <p class="list__items--content">
+                        <p class="list__content">
                             About Us
                         </p>
                         </a>
@@ -45,13 +45,14 @@
 
         <section class="admin dashboard__content">
 
-            <div class="add-new">
-                <button class="add-new__button" onclick="return addItemPopup()"><i class=" uil-file-plus add-icon"></i>
+            <div class="heading">
+                <h1 class="heading__content">Admin Table</h1>
+                <button class="heading__button" onclick="return addItemPopup()"><i class=" uil-file-plus add-icon"></i>
                     Add User</button>
             </div>
             <table class="main__table table" id="user-table">
                 <thead class="head">
-                    <tr class="table__row">
+                    <tr class="table__row table__row--noscale">
                         <th class="table__head head_id">ID</th>
                         <th class="table__head head_name">name</th>
                         <th class="table__head head-email">email</th>
@@ -67,14 +68,17 @@
         <section class="main hero add-item-popup">
             <div class="container">
                 <div class="add-items form-container">
+                    
                     <form class="form" id="add-user-form" >
                         <div class="input">
                             <input class="input__field name add-name" type="text" placeholder="Enter user name">
                             <i class="uil uil-user icon"></i>
+                            <small></small>
                         </div>
                         <div class="input">
                             <input class="input__field email add-email" type="text" placeholder="Enter user email">
                             <i class="uil uil-envelope icon"></i>
+                            <small></small>
                         </div>
 
                         <div class="input button flex-button ">
@@ -93,10 +97,12 @@
                         <div class="input">
                             <input class="input__field edit-name" type="text" placeholder="Enter user name">
                             <i class="uil uil-user icon"></i>
+                            <small></small>
                         </div>
                         <div class="input">
                             <input class="input__field  edit-email" type="text" placeholder="Enter user email">
                             <i class="uil uil-envelope icon"></i>
+                            <small></small>
                         </div>
 
                         <div class="input button flex-button ">

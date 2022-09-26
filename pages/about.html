@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link rel="stylesheet" href="../scss/styles.css">
+</head>
+
+<body>
+    <div class="dashboard">
+        <div class="nav">
+            <div class="nav__left">
+                <ul class="list">
+                    <li class="list__items">
+                        <a  class ="list__link" href="./dashboard.html">
+                            <i class="uil uil-airplay icon"></i>
+                            <p class="list__content">
+                                Dashboard
+                            </p>
+                        </a>
+                    </li>
+                    <li class="list__items">
+                        <a class ="list__link" href="./admin.html">
+                            <i class="uil uil-user-circle icon"></i>
+                            <p class="list__content">
+                                Admin
+                            </p>
+                        </a>
+                    </li>
+                    <li class="list__items">
+                        <a class ="list__link" href="./about.html">
+                        <i class="uil uil-info-circle icon"></i>
+                        <p class="list__content">
+                            About Us
+                        </p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <button class="button__input button__cancel" value="cancel"  onclick="signOut() ">SignOut</button>
+
+    </div>
+</body>
+
+<script src="../js/dashboard.js"></script>
+
+</html>

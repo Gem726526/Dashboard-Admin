@@ -16,53 +16,67 @@
             <div class="nav__left">
                 <ul class="list">
                     <li class="list__items">
-                        <a href="./dashboard.html">
+                        <a class="list__link" href="./dashboard.html">
                             <i class="uil uil-airplay icon"></i>
-                            <p class="list__items--content">
+                            <p class="list__content">
                                 Dashboard
                             </p>
                         </a>
                     </li>
                     <li class="list__items">
-                        <a href="./admin.html">
+                        <a class="list__link" href="./admin.html">
                             <i class="uil uil-user-circle icon"></i>
-                            <p class="list__items--content">
+                            <p class="list__content">
                                 Admin
                             </p>
                         </a>
                     </li>
                     <li class="list__items">
-                        <a href="./index.html">
-                        <i class="uil uil-info-circle icon"></i>
-                        <p class="list__items--content">
-                            About Us
-                        </p>
+                        <a class="list__link" href="./about.html">
+                            <i class="uil uil-info-circle icon"></i>
+                            <p class="list__content">
+                                About Us
+                            </p>
                         </a>
                     </li>
-
-
                 </ul>
             </div>
         </div>
         <section class="main dashboard__content">
-            <div class="main__card total-users">
-                <i class=" uil-user-check main__card--icon"></i>
-                <p class="main__card--content total-users__content">
+         <div class="main__heading-conatiner">
+            <h1 class="main__heading">User Dashboard</h1>
+         </div>
+            <div class="card-conatiner">
+                <div class="main__card total-users">
+                    <h2 class="main__card-title">Total Users</h2>
+                    <div class="main__card-content content">
+                        <i class=" uil-user-check content__icon"></i>
+                        <p class="content__text total-users__content">
+                    </div>
 
-                </p>
-            </div>
-            <div class="main__card top-users">
-                <h2> Top Users</h2>
-                <p class="main__card--content top-users__content">
 
-                </p>
-            </div>
-            <div class="main__card">
-                <i class=" uil-user-check main__card--icon"></i>
-                <p class="main__card--content">
-                    60 users
+                    </p>
+                </div>
+                <div class="main__card top-users">
+                    <h2 class="main__card-title">Top Users</h2>
+                    <div class="main__card-content content">
+                        <i class=" uil-user-check content__icon"></i>
+                        <p class="content__text top-users__content">
+                    </div>
 
-                </p>
+
+                    </p>
+                </div>
+                <!-- <div class="main__card top-users">
+                    <div class="main__card-heading">
+                        <h2 class="main__card-title"> Top Users</h2>
+                        <i class="  uil-arrow-circle-up main__card-icon"></i>
+                    </div>
+                    <p class="main__card-content top-users__content">
+
+                    </p>
+                </div> -->
+
             </div>
         </section>
 

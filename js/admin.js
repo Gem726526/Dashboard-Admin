@@ -77,7 +77,7 @@ function render() {
 
     // creating  the edit button on each table row
     const editButton = document.createElement("td");
-    editButton.className = "table__data";
+    editButton.className = "table__data edit__btn";
     editButton.innerHTML = `<i class=" uil-edit edit-icon"></i>`;
     editButton.addEventListener("click", () => {
       editUser(i);
@@ -85,7 +85,7 @@ function render() {
     tr.appendChild(editButton); //this line adds the button
     // creating  the delete button on each table row
     const deleteButton = document.createElement("td");
-    deleteButton.className = "table__data";
+    deleteButton.className = "table__data delete-btn";
     deleteButton.innerHTML = `<i class=" uil-trash trash-icon"></id>`;
     deleteButton.addEventListener("click", () => {
       deleteUser(i);

@@ -1,32 +1,67 @@
 .table {
     width: 100%;
-    padding: 0px 100px 100px 100px;
+   
     background: $light-color;
-    
-
     margin-top: 0;
-    font-size: 24px;
+    font-size: 20px;
+    border-spacing: 0px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 7px;
+
+
+
     &__body {
-        margin: 0 50px;
-        padding: 0 50px;
+        border-radius: 5px;
     }
-    &__row {
-        padding: 0 50px;
-        border: 1px solid $dark-color;
-    }
+
     &__head {
         font-weight: lighter;
-        padding: 0 5px;
-        border: 1px solid $dark-color;
+        padding: 7px;
         margin: 0;
-        text-transform: uppercase;
-        background-color: $dark-color;
+        text-transform: capitalize;
+        background-color: $primary-color;
         color: $light-color;
+
+      
     }
 
+    &__row {
+
+
+        &:nth-child(odd) {
+            background-color: $light-color;
+            color: $dark-color;
+        }
+
+        &:nth-child(even) {
+            background-color: $grey-color;
+            color: $dark-color;
+        }
+        
+        &:hover {
+            transform: scaleY(1.1);
+            background: $primary-color-soft;
+            color: $light-color;
+            .edit-icon{
+                color: $light-color;
+            }
+
+        }
+
+        &--noscale{
+            &:hover{
+                transform: none;
+            }
+        }
+    }
+
+
     &__data {
-        padding: 0 5px;
+        padding: 5px;
         text-align: center;
-        border-bottom: 1px solid $dark-color;
+        border-bottom: 1px solid $primary-color-light;
+        text-transform: capitalize;
+        font-size: 18px;
+
+
     }
 }

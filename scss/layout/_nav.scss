@@ -1,32 +1,102 @@
 .nav {
     display: flex;
     height: 100vh;
-    min-height: 520px;
-    border: 2px solid $sucess-color;
-    background-color: $light-color;
+    flex-wrap: wrap;
+    background-color: $primary-color;
+    position: fixed;
+
     &__left {
         width: 100%;
+        
     }
-}
-.list {
-    color: $dark-color;
-    padding: 0 40px;
-    margin-top: 40px;
-    border-top: 1px solid $dark-color;
 
-    &__items {
-        width: 100%;
-        list-style: none;
-        font-size: 24px;
-        padding: 5px;
+}
+
+.list {
+    background: $primary-color;
+    margin-top:  40px;
+    border-top: 1px solid $light-color;
+    padding-left: 20px;
+    list-style: none;
+    &__items{
+        margin: 5px 0;
         position: relative;
-        margin-top: 5px;
-        overflow: hidden;
-        &--content {
-            padding-left: 20px;
+        padding: 8px;
+        &:hover{
+            background: $light-color;
+            border-radius: 5px;
+            
+
         }
-        &:hover {
-            border: 1px solid $dark-color;
+        
+    }
+    &__link{
+       
+        color: $light-color;
+        text-decoration: none;
+        font-size: 20px;
+        // padding-left: 5px;
+        
+        .icon{
+            position: absolute;
+            left: 0;
+            top: 0;
+            transform: translateY(20%);
+            color: $light-color;
+        }
+        &:hover{
+            background: $light-color;
+            border-radius: 5px;
+            color: $primary-color-soft;
+            .icon{
+                color: $primary-color-soft; 
+            }
+
         }
     }
+    &__content{
+        padding-left: 20px;
+    }
+    
 }
+
+// .list {
+//     color: $dark-color;
+//     width: 100%;
+//     margin-top: 40px;
+//     border-top: 1px solid $dark-color;
+
+
+//     &__items {
+//         display: flex;
+//         flex-wrap: wrap;
+//         width: 100%;
+//         list-style: none;
+//         font-size: 24px;
+//         padding: 5px;
+//         position: relative;
+//         margin-top: 5px;
+
+//         &:hover {
+//             background: $primary-color;
+//             color: $light-color;
+
+//             &__link {
+//                 color: $light-color;
+//             }
+//         }
+//     }
+
+//     &__link {
+//         text-decoration: none;
+
+//         .icon {
+//             min-width: 100px;
+//             padding-right: 20px;
+//         }
+//     }
+
+//     &__content {
+//         padding-left: 10px;
+//     }
+// }
