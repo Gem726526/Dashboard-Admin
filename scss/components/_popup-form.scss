@@ -3,44 +3,37 @@
         height: auto;
     }
 }
+
 .flex-button {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
-.add-item-popup {
+.form-popup {
     display: none;
+
     &.active {
         background: $grey-color;
         position: fixed;
-        width: 100%;
+        width: 100vw;
         height: 100%;
         top: 0px;
         left: 0px;
         z-index: 1;
         opacity: 0.95;
-
+        margin-left: 0;
         @include centerItems();
-        
+
+
     }
-    .form-container{
+
+    .form-container {
         background-color: $light-color;
         opacity: 1;
+        border-radius: 10px;
     }
 
-    
-    
-}
-.edit-item-popup {
-    display: none;
-    &.active {
-        background: $primary-color;
-        position: fixed;
-        width: 100%;
-        height: 100%;
-        top: 0px;
-        left: 0px;
-        z-index: 1000;
-        @include centerItems();
-    }
+
+
 }

@@ -8,20 +8,24 @@
     &.icon {
         left: 0;
     }
+
     &.show-hide-password {
         right: 0;
         cursor: pointer;
         padding: 10px;
     }
 }
+
 .trash-icon {
     cursor: pointer;
     color: $error-color;
 }
+
 .edit-icon {
     cursor: pointer;
     color: $secondary-color;
 }
+
 .add-icon {
     color: $light-color;
 }

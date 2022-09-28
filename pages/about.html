@@ -7,42 +7,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
-    <link rel="stylesheet" href="../scss/styles.css">
+    <link rel="stylesheet" href="../styles.css">
 </head>
 
 <body>
-    <div class="dashboard">
+    <div class="container">
         <div class="nav">
-            <div class="nav__left">
-                <ul class="list">
-                    <li class="list__items">
-                        <a  class ="list__link" href="./dashboard.html">
-                            <i class="uil uil-airplay icon"></i>
-                            <p class="list__content">
-                                Dashboard
-                            </p>
-                        </a>
-                    </li>
-                    <li class="list__items">
-                        <a class ="list__link" href="./admin.html">
-                            <i class="uil uil-user-circle icon"></i>
-                            <p class="list__content">
-                                Admin
-                            </p>
-                        </a>
-                    </li>
-                    <li class="list__items">
-                        <a class ="list__link" href="./about.html">
+            <ul class="nav__list">
+                <li class="nav__list-items">
+                    <a class="nav__list-link" href="./dashboard.html">
+                        <i class="uil uil-airplay icon"></i>
+                        <span class="nav__list-text">
+                            Dashboard
+                        </span>
+                    </a>
+                </li>
+
+
+                <li class="nav__list-items">
+                    <a class="nav__list-link" href="./admin.html">
+                        <i class="uil uil-user-circle icon"></i>
+                        <span class="nav__list-text">
+                            Admin
+                        </span>
+                    </a>
+                </li>
+                <li class="nav__list-items">
+                    <a class="nav__list-link" href="./about.html">
                         <i class="uil uil-info-circle icon"></i>
-                        <p class="list__content">
+                        <span class="nav__list-text">
                             About Us
-                        </p>
-                        </a>
-                    </li>
-                </ul>
-            </div>
+                        </span>
+                    </a>
+                </li>
+            </ul>
         </div>
-        <button class="button__input button__cancel" value="cancel"  onclick="signOut() ">SignOut</button>
+        <button class="button button--danger" value="cancel"  onclick="signOut() ">SignOut</button>
 
     </div>
 </body>

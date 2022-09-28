@@ -1,4 +1,3 @@
-//FUNCTION TO CHECK NAME
 const checkUsername = (usernameEl) => {
   let valid = false;
 
@@ -21,7 +20,6 @@ const checkUsername = (usernameEl) => {
   return valid;
 };
 
-//FUNCTION TO CHECK EMAIL
 const checkEmail = (emailEl) => {
   let valid = false;
   const email = emailEl.value;
@@ -36,7 +34,6 @@ const checkEmail = (emailEl) => {
   return valid;
 };
 
-//FUNTION TO CHECK PASSWORD
 const checkPassword = (passwordEl) => {
   let valid = false;
 
@@ -54,7 +51,6 @@ const checkPassword = (passwordEl) => {
   return valid;
 };
 
-//FUNTION TO CHECK CONFIRM PASSWROD AND PASSWORD MATCH
 const checkConfirmPassword = (passwordEl, confirmPasswordEl) => {
   let valid = false;
   // check confirm password
@@ -73,48 +69,35 @@ const checkConfirmPassword = (passwordEl, confirmPasswordEl) => {
   return valid;
 };
 
-//HELEPR FUNCTION FOR EMAIL REGEX
+//email regex
 const isEmailValid = (email) => {
   const re = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.[a-zA-Z]{2,3})+$/;
   return re.test(email);
 };
 
-//HELPER FUNCTION FOR PASSWORD REGEX
+///passwrod regex
 const isPasswordSecure = (password) => {
   const re = new RegExp("^(?=.{4,})");
   return re.test(password);
 };
 
-//function to chceck if the input is empty
 const isRequired = (value) => (value === "" ? false : true);
 
-//function to check length of input is in between or not
 const isBetween = (length, min, max) =>
   length < min || length > max ? false : true;
 
-//function to show error message
 const showError = (input, message) => {
-  // get the form-field element
   const formField = input.parentElement;
-  // add the error class
   formField.classList.remove("success");
   formField.classList.add("error");
-
-  // show the error message
   const error = formField.querySelector("small");
   error.textContent = message;
 };
 
-//function to remove error class and message(showsuccess)
 const showSuccess = (input) => {
-  // get the form-field element
   const formField = input.parentElement;
-
-  // remov e the error class
-  formField.classList.remove("error");
-  formField.classList.add("success");
-
-  // hide the error message
+  formField.classList.remove("alert--error");
+  formField.classList.add("alert--success");
   const error = formField.querySelector("small");
   error.textContent = "";
 };
@@ -122,13 +105,12 @@ const showSuccess = (input) => {
 //******form validations  work starts from here********
 
 //validating signup form validation
-
 const signUpForm = document.querySelector("#signup-form");
 function signUpFormValidation() {
-  const signupEmail = document.querySelector(".signup-email"),
-    signupName = document.querySelector(".signup-name"),
-    password = document.querySelector(".signup-password"),
-    newPassword = document.querySelector(".confirm-password");
+  const signupEmail = document.querySelector("#signup-email"),
+    signupName = document.querySelector("#signup-name"),
+    password = document.querySelector("#signup-password"),
+    newPassword = document.querySelector("#confirm-password");
   // validate fields
   let isUsernameValid = checkUsername(signupName),
     isEmailValid = checkEmail(signupEmail),
@@ -148,52 +130,42 @@ if (signUpForm) {
 }
 
 //validating login form::
-const logInForm = document.querySelector("#login-form");
+const logInForm = document.querySelector("#edit-user-btn-js");
 function logInFormValidation() {
-  const logInEmail = document.querySelector(".login-email"),
-    password = document.querySelector(".login-password");
-
+  const logInEmail = document.querySelector("#login-email"),
+    password = document.querySelector("#login-password");
   // validate fields
   let isEmailValid = checkEmail(logInEmail),
     isPasswordValid = checkPassword(password);
 
   let isFormValid = isEmailValid && isPasswordValid;
-
   return isFormValid;
 }
-
 if (logInForm) {
   logInForm.addEventListener("submit", logInFormValidation);
 }
 
-//edit user form validation
 const editUserForm = document.querySelector("#edit-user-form");
 function editUserFormValidation() {
   const name = document.querySelector(".edit-name"),
     email = document.querySelector(".edit-email");
   let isFormValid = checkUsername(name) && checkEmail(email);
-  if (isFormValid == false) {
-    document.querySelector(".edit-item-popup").classList.add("active");
+  if (!isFormValid) {
+    document.querySelector("#edit-item-popup").classList.add("active");
   }
   return isFormValid;
 }
 if (editUserForm) {
-  editUserForm.addEventListener("click", editUserFormValidation);
+  editUserForm.addEventListener("submit", editUserFormValidation);
 }
-//add user form validation
 
 const addUserForm = document.querySelector("#add-user-form");
-function addUserFormValidation() {
-  const name = document.querySelector(".add-name"),
-    email = document.querySelector(".add-email");
+export function addUserFormValidation() {
+  const name = document.querySelector(".add-name-js"),
+    email = document.querySelector(".add-email-js");
   let isFormValid = checkUsername(name) && checkEmail(email);
-  if ((isFormValid = true)) {
-    console.log("true");
-  } else {
-    console.log("false");
-  }
   return isFormValid;
 }
 if (addUserForm) {
-  addUserForm.addEventListener("submit", addUserFormValidation);
+  addUserForm.addEventListener("click", addUserFormValidation);
 }

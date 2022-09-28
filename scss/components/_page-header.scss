@@ -1,20 +1,16 @@
-.admin {
-    height: 100vh;
-    margin-top: 0;
-    padding: 20px;
-    // background-color: $primary-color-soft;
-}
-.heading {
+.page-header {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     background-color: $light-color;
     text-align: right;
     padding: 10px 50px;
-    &__content{
-       
-        font-weight:lighter;
+
+    &__title {
+        font-size: 36px;
+        font-weight: lighter;
     }
+
     &__button {
         font-size: 24px;
         border: none;
@@ -22,7 +18,8 @@
         background-color: $sucess-color;
         color: $light-color;
         border-radius: 5px;
-        &:hover{
+
+        &:hover {
             background-color: $sucess-color-light;
         }
     }

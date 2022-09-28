@@ -1,8 +1,11 @@
-.copyright {
+.footer {
     position: absolute;
     bottom: 0;
-    left: 0;
-    display: block;
+}
+
+.copyright {
+
+    font-size: 14px;
     color: $light-color;
     padding: 10px;
 }

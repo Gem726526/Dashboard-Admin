@@ -1,33 +1,48 @@
-.button {
+.button-wrapper {
 	margin-top: 35px;
 	color: $light-color;
+	display: flex;
+	justify-content: space-between;
+}
 
-	&__input {
-		border: none;
-		font-size: 17px;
-		font-weight: 500;
-		letter-spacing: 1px;
-		border-radius: 6px;
-		padding: 0 35px;
-		background-color: $primary-color;
-		cursor: pointer;
-		transition: all 0.3s ease;
-		@include size(100%, 100%);
-		color: $light-color;
-		&:hover {
-			background-color: $secondary-color;
-		}
+.button {
+	border: none;
+	font-size: 17px;
+	font-weight: 500;
+	letter-spacing: 1px;
+	border-radius: 6px;
+	padding: 0 35px;
+	background-color: $primary-color;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	@include size(100%, 100%);
+	color: $light-color;
+
+	&:hover {
+		background-color: $secondary-color;
 	}
-	&__add-user {
+
+	&--success {
 		background: $sucess-color;
+
 		&:hover {
 			background-color: $sucess-color-light;
 		}
 	}
-	&__cancel {
+
+	&--danger {
 		background: $error-color;
+
 		&:hover {
 			background-color: $error-color-dark;
+		}
+	}
+
+	&--warning {
+		background: $warining-color;
+
+		&:hover {
+			background-color: $warining-color-bright;
 		}
 	}
 }

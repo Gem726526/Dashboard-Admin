@@ -2,6 +2,7 @@
     width: $width;
     height: $height;
 }
+
 @mixin centerItems() {
     display: flex;
     justify-content: center;

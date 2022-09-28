@@ -1,18 +1,20 @@
-const addItemClass = document.querySelector(".add-item-popup"),
-  editItemClass = document.querySelector(".edit-item-popup"),
-  userTableBody = document.querySelector("#table-body"),
+
+
+const addPopup = document.querySelector("#add-item-popup"),
+  editPopup = document.querySelector("#edit-item-popup"),
+  userTableBody = document.querySelector(".table__body"),
   userTable = document.querySelector("#user-table");
- 
 
 let activeUserIndex;
 
 //activating the add item pop-up
 function addItemPopup() {
-  addItemClass.classList.add("active");
+  addPopup.classList.add("active");
 }
+
 //activating edit item pop-up
 function editItemPopup() {
-  editItemClass.classList.add("active");
+  editPopup.classList.add("active");
 }
 
 let usersFromStorage = localStorage.getItem("UserList");
@@ -20,20 +22,23 @@ let users = usersFromStorage ? JSON.parse(usersFromStorage) : [];
 // function for adding user to table
 const addUser = (e) => {
   e.preventDefault(); //to stop the form submitting
-  const addName = document.querySelector(".add-name").value,
-    addEmail = document.querySelector(".add-email").value;
+  const addName = document.querySelector(".add-name-js").value,
+    addEmail = document.querySelector(".add-email-js").value;
   let user = {
-    Name: addName,
-    Email: addEmail,
+    name: addName,
+    email: addEmail,
   };
+
   users.push(user);
   //to clear the form for the next entries
   document.querySelector("form").reset();
   //saving to localStorage
   localStorage.setItem("UserList", JSON.stringify(users));
-  addItemClass.classList.remove("active");
+  addPopup.classList.remove("active");
   render();
+  console.log(addUserFormValidation);
 };
+
 //function to delete user
 function deleteUser(userIndex) {
   const newUsers = [...users];
@@ -42,24 +47,25 @@ function deleteUser(userIndex) {
   localStorage.setItem("UserList", JSON.stringify(users));
   render();
 }
+
 //function to  edituserItem
 function editUser(userIndex) {
   editItemPopup(userIndex);
   activeUserIndex = userIndex;
   const userToBeEdited = users[userIndex];
-  document.querySelector(".edit-name").value = userToBeEdited.Name;
-  document.querySelector(".edit-email").value = userToBeEdited.Email;
-
+  document.querySelector(".edit-name").value = userToBeEdited.name;
+  document.querySelector(".edit-email").value = userToBeEdited.email;
 }
+
 //function to save edit to the table
 function saveEdits(e) {
   e.preventDefault();
-  const Name = document.querySelector(".edit-name").value;
-  const Email = document.querySelector(".edit-email").value;
-  users[activeUserIndex] = { Name, Email };
+  const name = document.querySelector(".edit-name").value;
+  const email = document.querySelector(".edit-email").value;
+  users[activeUserIndex] = { name, email };
   localStorage.setItem("UserList", JSON.stringify(users));
   render();
-  editItemClass.classList.remove("active");
+  editPopup.classList.remove("active");
 }
 
 function render() {
@@ -71,8 +77,8 @@ function render() {
     userTableBody.appendChild(tr);
     tr.innerHTML = `
                      <td class="table__data">${i + 1}</td>
-                     <td class="table__data">${user.Name}</td>
-                     <td class="table__data">${user.Email}</td>
+                     <td class="table__data">${user.name}</td>
+                     <td class="table__data">${user.email}</td>
                       `;
 
     // creating  the edit button on each table row
@@ -82,7 +88,7 @@ function render() {
     editButton.addEventListener("click", () => {
       editUser(i);
     });
-    tr.appendChild(editButton); //this line adds the button
+    tr.appendChild(editButton);
     // creating  the delete button on each table row
     const deleteButton = document.createElement("td");
     deleteButton.className = "table__data delete-btn";
@@ -92,12 +98,11 @@ function render() {
     });
     tr.appendChild(deleteButton); //this line adds the button
   });
-
-  
-
 }
 
 render();
 
 document.querySelector("#add-user-btn").addEventListener("click", addUser);
-document  .querySelector("#edit-user-btn-save")  .addEventListener("click", saveEdits);
+document
+  .querySelector("#edit-user-btn-js")
+  .addEventListener("click", saveEdits);

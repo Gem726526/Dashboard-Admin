@@ -7,119 +7,115 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Panel</title>
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
-    <link rel="stylesheet" href="../scss/styles.css">
+    <link rel="stylesheet" href="../styles.css">
 </head>
 
 <body>
-    <div class="dashboard">
+    <div class="container">
         <div class="nav">
-            <div class="nav__left">
-                <ul class="list">
-                    <li class="list__items">
-                        <a  class ="list__link" href="./dashboard.html">
-                            <i class="uil uil-airplay icon"></i>
-                            <p class="list__content">
-                                Dashboard
-                            </p>
-                        </a>
-                    </li>
-                    <li class="list__items">
-                        <a class ="list__link" href="./admin.html">
-                            <i class="uil uil-user-circle icon"></i>
-                            <p class="list__content">
-                                Admin
-                            </p>
-                        </a>
-                    </li>
-                    <li class="list__items">
-                        <a class ="list__link" href="./about.html">
+            <ul class="nav__list">
+                <li class="nav__list-items">
+                    <a class="nav__list-link" href="./dashboard.html">
+                        <i class="uil uil-airplay icon"></i>
+                        <span class="nav__list-text">
+                            Dashboard
+                        </span>
+                    </a>
+                </li>
+
+
+                <li class="nav__list-items">
+                    <a class="nav__list-link" href="./admin.html">
+                        <i class="uil uil-user-circle icon"></i>
+                        <span class="nav__list-text">
+                            Admin
+                        </span>
+                    </a>
+                </li>
+                <li class="nav__list-items">
+                    <a class="nav__list-link" href="./about.html">
                         <i class="uil uil-info-circle icon"></i>
-                        <p class="list__content">
+                        <span class="nav__list-text">
                             About Us
-                        </p>
-                        </a>
-                    </li>
-                </ul>
-            </div>
+                        </span>
+                    </a>
+                </li>
+            </ul>
         </div>
-
-        <section class="admin dashboard__content">
-
-            <div class="heading">
-                <h1 class="heading__content">Admin Table</h1>
-                <button class="heading__button" onclick="return addItemPopup()"><i class=" uil-file-plus add-icon"></i>
+        <section class=" main-content table-container ">
+            <div class="page-header">
+                <h1 class="page-header__title">Admin Table</h1>
+                <button class="page-header__button" id="add-user-popup-js" onclick="return addItemPopup()"><i
+                        class=" uil-file-plus add-icon"></i>
                     Add User</button>
             </div>
-            <table class="main__table table" id="user-table">
+            <table class="table" id="user-table">
                 <thead class="head">
                     <tr class="table__row table__row--noscale">
-                        <th class="table__head head_id">ID</th>
-                        <th class="table__head head_name">name</th>
-                        <th class="table__head head-email">email</th>
-                        <th class="table__head head-edit">edit</th>
-                        <th class="table__head head-delete">delete</th>
+                        <th class="table__head ">ID</th>
+                        <th class="table__head ">name</th>
+                        <th class="table__head ">email</th>
+                        <th class="table__head ">edit</th>
+                        <th class="table__head ">delete</th>
                     </tr>
                 </thead>
-                <tbody class="table__body" id="table-body">
+                <tbody class="table__body">
                     <!--table row goes here -->
                 </tbody>
             </table>
         </section>
-        <section class="main hero add-item-popup">
-            <div class="container">
-                <div class="add-items form-container">
-                    
-                    <form class="form" id="add-user-form" >
-                        <div class="input">
-                            <input class="input__field name add-name" type="text" placeholder="Enter user name">
-                            <i class="uil uil-user icon"></i>
-                            <small></small>
-                        </div>
-                        <div class="input">
-                            <input class="input__field email add-email" type="text" placeholder="Enter user email">
-                            <i class="uil uil-envelope icon"></i>
-                            <small></small>
-                        </div>
+        <section class="main-content  form-popup add-item-popup" id="add-item-popup">
+            <div class="add-items form-container">
+                <form class="form" id="add-user-form">
+                    <h1 class="form__title">Add User</h1>
+                    <div class="input">
+                        <input class="input__field name add-name-js" type="text" placeholder="Enter user name">
+                        <i class="uil uil-user icon"></i>
+                        <small class = "alert"></small>
+                    </div>
+                    <div class="input">
+                        <input class="input__field email add-email-js" type="text" placeholder="Enter user email">
+                        <i class="uil uil-envelope icon"></i>
+                        <small class = "alert"></small>
+                    </div>
 
-                        <div class="input button flex-button ">
-                            <button class="button__input button__add-user" id="add-user-btn"  type = "submit">Add
-                                User</button>
-                            <button class="button__input button__cancel" value="cancel">Cancel</button>
-                        </div>
-                    </form>
-                </div>
+                    <div class="input button-wrapper">
+                        <button class="button button--success" id="add-user-btn" type="submit">Add
+                            User</button>
+                        <button class="button button--danger" value="cancel">Cancel</button>
+                    </div>
+                </form>
             </div>
         </section>
-        <section class="main hero edit-item-popup">
-            <div class="container">
-                <div class="edit-items form-container">
-                    <form class="form" id="edit-user-form">
-                        <div class="input">
-                            <input class="input__field edit-name" type="text" placeholder="Enter user name">
-                            <i class="uil uil-user icon"></i>
-                            <small></small>
-                        </div>
-                        <div class="input">
-                            <input class="input__field  edit-email" type="text" placeholder="Enter user email">
-                            <i class="uil uil-envelope icon"></i>
-                            <small></small>
-                        </div>
+        <section class="main-content  form-popup" id="edit-item-popup">
+            <div class="edit-items form-container">
+                <form class="form" id="edit-user-form">
+                    <h1 class="form__title">Edit User</h1>
+                    <div class="input">
+                        <input class="input__field edit-name" type="text" placeholder="Enter user name">
+                        <i class="uil uil-user icon"></i>
+                        <small class = "alert"></small>
+                    </div>
+                    <div class="input">
+                        <input class="input__field  edit-email" type="text" placeholder="Enter user email">
+                        <i class="uil uil-envelope icon"></i>
+                        <small class = "alert"></small>
+                    </div>
 
-                        <div class="input button flex-button ">
-                            <button class="button__input button__edit-user" id="edit-user-btn-save"
-                                 type="submit"  value="edit-item">Edit
-                                User</button>
-                            <button class="button__input button__cancel" value="cancel">Cancel</button>
-                        </div>
-                    </form>
-                </div>
+                    <div class="input button-wrapper  ">
+                        <button class="button button--warning" id="edit-user-btn-js" type="submit"
+                            value="edit-item">Edit
+                            User</button>
+                        <button class="button button--danger"  value="cancel">Cancel</button>
+                    </div>
+                </form>
             </div>
         </section>
-
     </div>
 </body>
 
-<script src="../js/admin.js"></script>
-<script src="../js/form-validation.js"></script>
+<script src="../js/admin.js " type="module" ></script>
+<script src="../js/form-validation.js"  type="module" ></script>
+
 
 </html>

@@ -2,11 +2,12 @@
     .checkbox-content {
         display: flex;
         align-items: center;
-        margin: 20px 0px;
+
         &__box {
             margin: 0 0px -2px 4px;
             accent-color: $primary-color;
         }
+
         &__text {
             color: $dark-color;
             padding: 0 10px;

@@ -1,0 +1,28 @@
+.form-container {
+    background-color: $primary-color;
+    margin: 0 auto;
+    padding-top: 50px;
+    border: none;
+
+    .form {
+        min-width: 410px;
+        border-radius: 5px;
+    }
+
+    .signup {
+        display: none;
+        transition: display 0.2s ease;
+    }
+
+    &.active {
+        .login {
+            display: none;
+            transition: display 0.18s ease, opacity 0.15s ease;
+        }
+        .signup {
+            display: block;
+            transition: display 0.2s ease;
+        }
+
+    }
+}

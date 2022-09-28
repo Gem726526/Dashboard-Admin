@@ -1,71 +1,16 @@
-.main {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
+.main-content {
+    background: $light-color;
     padding: 20px;
+    margin-left: 200px;
+    width: calc(100% - 200px);
 
-    &__heading-conatiner {
-        border-bottom: 1px solid $primary-color;
-    }
 
     &__heading {
         text-align: center;
-        font-size: 36px;
+        font-weight: lighter;
+        font-size: 40px;
         color: $primary-color-soft;
-
+        border-bottom: 1px solid $primary-color;
     }
 
-    &__card {
-
-        justify-content: center;
-        align-items: center;
-        min-width: 100%;
-        background: $primary-color-bright;
-        color: $light-color;
-        margin: 10px;
-        padding: 30px;
-        box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
-
-        &-title {
-
-            font-size: 20px;
-        }
-
-        &-content {
-            @include centerItems();
-            font-size: 40px;
-
-            &.content {}
-        }
-
-        .content {
-            &__icon {
-
-                border-radius: 50%;
-                height: 50%;
-                width: 50%;
-                background: $light-color;
-                font: 60px;
-
-                &::before {
-                    transform: translateX(40%);
-                    color: $primary-color-bright;
-                }
-
-
-            }
-
-            &__text {
-                padding: 5px;
-                font-size: 20px;
-            }
-        }
-    }
-
-    .card-conatiner {
-        display: flex;
-        padding: 20px 0;
-    }
 }

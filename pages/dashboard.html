@@ -7,83 +7,89 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
-    <link rel="stylesheet" href="../scss/styles.css">
+    <link rel="stylesheet" href="../styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
 <body>
-    <div class="dashboard">
+    <div class="container">
         <div class="nav">
-            <div class="nav__left">
-                <ul class="list">
-                    <li class="list__items">
-                        <a class="list__link" href="./dashboard.html">
-                            <i class="uil uil-airplay icon"></i>
-                            <p class="list__content">
-                                Dashboard
-                            </p>
-                        </a>
-                    </li>
-                    <li class="list__items">
-                        <a class="list__link" href="./admin.html">
-                            <i class="uil uil-user-circle icon"></i>
-                            <p class="list__content">
-                                Admin
-                            </p>
-                        </a>
-                    </li>
-                    <li class="list__items">
-                        <a class="list__link" href="./about.html">
-                            <i class="uil uil-info-circle icon"></i>
-                            <p class="list__content">
-                                About Us
-                            </p>
-                        </a>
-                    </li>
-                </ul>
-            </div>
+            <ul class="nav__list">
+                <li class="nav__list-items">
+                    <a class="nav__list-link" href="./dashboard.html">
+                        <i class="uil uil-airplay icon"></i>
+                        <span class="nav__list-text">
+                            Dashboard
+                        </span>
+                    </a>
+                </li>
+
+
+                <li class="nav__list-items">
+                    <a class="nav__list-link" href="./admin.html">
+                        <i class="uil uil-user-circle icon"></i>
+                        <span class="nav__list-text">
+                            Admin
+                        </span>
+                    </a>
+                </li>
+                <li class="nav__list-items">
+                    <a class="nav__list-link" href="./about.html">
+                        <i class="uil uil-info-circle icon"></i>
+                        <span class="nav__list-text">
+                            About Us
+                        </span>
+                    </a>
+                </li>
+            </ul>
         </div>
-        <section class="main dashboard__content">
-         <div class="main__heading-conatiner">
-            <h1 class="main__heading">User Dashboard</h1>
-         </div>
-            <div class="card-conatiner">
-                <div class="main__card total-users">
-                    <h2 class="main__card-title">Total Users</h2>
-                    <div class="main__card-content content">
-                        <i class=" uil-user-check content__icon"></i>
-                        <p class="content__text total-users__content">
+        <section class="main-content">
+            <h1 class="main-content__heading">User Dashboard</h1>
+            <div class="card-container">
+                <div class="card total-users">
+                    <h2 class="card__title">Total Users</h2>
+                    <div class="card__content ">
+                        <i class=" uil-user-check card__content-icon"></i>
+                        <p class="card__content-text total-users__content"></p>
                     </div>
-
-
-                    </p>
                 </div>
-                <div class="main__card top-users">
-                    <h2 class="main__card-title">Top Users</h2>
-                    <div class="main__card-content content">
-                        <i class=" uil-user-check content__icon"></i>
-                        <p class="content__text top-users__content">
+                <div class="card top-users">
+                    <h2 class="card__title"><i class=" uil-arrow-up "></i>Top Users </h2>
+                    <div class="card__content ">
+                        <p class="card__content-text top-users__content"> </p>
                     </div>
-
-
-                    </p>
                 </div>
-                <!-- <div class="main__card top-users">
-                    <div class="main__card-heading">
-                        <h2 class="main__card-title"> Top Users</h2>
-                        <i class="  uil-arrow-circle-up main__card-icon"></i>
-                    </div>
-                    <p class="main__card-content top-users__content">
 
-                    </p>
-                </div> -->
+                <div class="card top-users">
+                    <h2 class="card__title"><i class=" uil-envelope-add"></i>AD card </h2>
+                    <div class="card__content ">
+                        <p class="card__content-text "> Ads Here </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="main-content">
+            <h1 class="main-content__heading">Charts</h1>
+            <div class="chart">
+                <div class="chart__item">
+                    <canvas id="bar-chart" class="chart__canvas"></canvas>
+                </div>
+
+                <div class="chart__item">
+                    <canvas id="line-chart" class="chart__canvas"></canvas>
+                </div>
+
+                <div class="chart__item">
+                    <canvas id="pie-chart" class="chart__canvas"></canvas>
+                </div>
+
 
             </div>
         </section>
-
-
     </div>
 </body>
 
 <script src="../js/dashboard.js"></script>
+<script src="../js/chart.js"></script>
 
 </html>

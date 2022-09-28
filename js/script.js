@@ -1,27 +1,20 @@
-const container = document.querySelector(".container"),
+const container = document.querySelector(".form-container"),
     passworShowHide = document.querySelectorAll(".show-hide-password"),
-    pwFields = document.querySelectorAll(".password-text"),
+    password = document.querySelectorAll(".password-text"),
     signUp = document.querySelector(".signup-link"),
-    addItemClass = document.querySelector('.add-item-popup'),
+    addItemClass = document.querySelector('#add-item-popup'),
     login = document.querySelector(".login-link");
 
-
-    ///password naming remian
-
-    
-//    show/hide password and change icon
 passworShowHide.forEach(eyeIcon => {
     eyeIcon.addEventListener("click", () => {
-        pwFields.forEach(pwField => {
-            if (pwField.type === "password") {
-                pwField.type = "text";
-
+        password.forEach(password => {
+            if (password.type === "password") {
+                password.type = "text";
                 passworShowHide.forEach(icon => {
                     icon.classList.replace("uil-eye-slash", "uil-eye");
                 })
             } else {
-                pwField.type = "password";
-
+                password.type = "password";
                 passworShowHide.forEach(icon => {
                     icon.classList.replace("uil-eye", "uil-eye-slash");
                 })
@@ -37,8 +30,6 @@ signUp.addEventListener("click", () => {
 login.addEventListener("click", () => {
     container.classList.remove("active");
 });
-
-
 
 //dynamic date:
 document.getElementById("year").innerHTML = new Date().getFullYear();

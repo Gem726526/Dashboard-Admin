@@ -5,117 +5,106 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
-
-
-    <link rel="stylesheet" href="../scss/styles.css">
-
+    <link rel="stylesheet" href="../styles.css">
 </head>
 
 <body>
-    <section class="hero">
-        <div class="container">
-            <div class="form-container">
-                <div class="form login">
-                    <h1 class="title">Login</h1>
+    <div class="container">
+        <div class="form-container">
+            <div class="form login">
+                <h1 class="form__title">Login</h1>
 
-                    <form id="login-form" action="./dashboard.html" onsubmit="return logInFormValidation();">
-                        <div class="input">
-                            <input class="input__field  login-email" type="text" placeholder="Enter your email"
-                                >
-                            <i class="uil uil-envelope icon"></i>
-                            <small></small>
-                        </div>
-                        <div class="input">
-                            <input class="input__field password login-password password-text" type="password"
-                                placeholder="Enter your password">
-                            <i class="uil uil-lock icon"></i>
-                            <i class="uil uil-eye-slash show-hide-password"></i>
-                            <small></small>
-                        </div>
-
-                        <div class="checkbox-text">
-                            <div class="checkbox-content">
-                                <input class="checkbox-content__box" type="checkbox" id="logCheck">
-                                <label for="logCheck" class="checkbox-content__text">Remember me</label>
-                            </div>
-
-                            <a href="#" class="link-text">Forgot password?</a>
-                        </div>
-
-                        <div class="input button">
-                            <button class="button__input" type="submit" value="Login">Log In</button>
-                        </div>
-                    </form>
-
-                    <div class="login-signup">
-                        <span class="text">Not a member?
-                            <a href="#" class="link-text signup-link">Signup Now</a>
-                        </span>
+                <form id="login-form" action="./dashboard.html" onsubmit="return logInFormValidation();">
+                    <div class="input">
+                        <input class="input__field  " id="login-email" type="text" placeholder="Enter your email">
+                        <i class="uil uil-envelope icon"></i>
+                        <small class = "alert"></small>
                     </div>
+                    <div class="input">
+                        <input class="input__field password  password-text" id="login-password" type="password"
+                            placeholder="Enter your password">
+                        <i class="uil uil-lock icon"></i>
+                        <i class="uil uil-eye-slash show-hide-password"></i>
+                        <small class = "alert"></small>
+                    </div>
+
+                    <div class="checkbox-text input">
+                        <div class="checkbox-content">
+                            <input class="checkbox-content__box" type="checkbox" id="logCheck">
+                            <label for="logCheck" class="checkbox-content__text">Remember me</label>
+                        </div>
+
+                        <a href="#" class="link-text forgot-text">Forgot password?</a>
+                    </div>
+
+                    <div class="input button-wrapper">
+                        <button class="button" type="submit" value="Login">Log In</button>
+                    </div>
+                </form>
+
+                <div class="login-signup">
+                    <span class="text">Not a member?
+                        <a href="#" class="link-text signup-link">Signup Now</a>
+                    </span>
                 </div>
+            </div>
 
-                <!-- Registration Form -->
-                <div class="form signup">
-                    <h1 class="title">Registration</h1>
+            <!-- Registration Form -->
+            <div class="form signup">
+                <h1 class="form__title">Registration</h1>
 
-                    <form id="signup-form" action="./dashboard.html" onsubmit="return signUpFormValidation();">
-                        <div class="input">
-                            <input class="input__field signup-name" type="text" placeholder="Enter your name">
-                            <i class="uil uil-user icon"></i>
-                            <small></small>
-                        </div>
-                        <div class="input">
-                            <input class="input__field email signup-email" type="text" placeholder="Enter your email">
-                            <i class="uil uil-envelope icon"></i>
-                            <small></small>
-                        </div>
-                        <div class="input">
-                            <input class="input__field password signup-password password-text" type="password"
-                                placeholder="Create a password">
-                            <i class="uil uil-lock icon"></i>
-                            <small></small>
-                        </div>
-                        <div class="input">
-                            <input class="input__field confirm-password password-text" type="password"
-                                placeholder="Confirm  password">
-                            <i class="uil uil-lock icon"></i>
-                            <i class="uil uil-eye-slash show-hide-password"></i>
-                            <small></small>
-                        </div>
-
-                        <div class="checkbox-text">
-                            <div class="checkbox-content">
-                                <input class="checkbox-content__box" type="checkbox" id="termCon">
-                                <label for="termCon" class="checkbox-content__text">I accepted all terms and
-                                    conditions</label>
-                            </div>
-                        </div>
-
-                        <div class="input button">
-                            <button class="button__input" type="submit" value="Signup">Sign Up</button>
-                        </div>
-                    </form>
-
-                    <div class="login-signup">
-                        <span class="text">Already a member?
-                            <a href="#" class="link-text login-link">Login Now</a>
-                        </span>
+                <form id="signup-form" action="./dashboard.html" onsubmit="return signUpFormValidation();">
+                    <div class="input">
+                        <input class="input__field " id="signup-name" type="text" placeholder="Enter your name">
+                        <i class="uil uil-user icon"></i>
+                        <small class = "alert"></small>
                     </div>
+                    <div class="input">
+                        <input class="input__field email " id="signup-email" type="text" placeholder="Enter your email">
+                        <i class="uil uil-envelope icon"></i>
+                        <small class = "alert"></small>
+                    </div>
+                    <div class="input">
+                        <input class="input__field password  password-text" id="signup-password" type="password"
+                            placeholder="Create a password">
+                        <i class="uil uil-lock icon"></i>
+                        <small class = "alert"></small>
+                    </div>
+                    <div class="input">
+                        <input class="input__field  password-text" id="confirm-password" type="password"
+                            placeholder="Confirm  password">
+                        <i class="uil uil-lock icon"></i>
+                        <i class="uil uil-eye-slash show-hide-password"></i>
+                        <small class = "alert"></small>
+                    </div>
+
+                    <div class="checkbox-text input">
+                        <div class="checkbox-content">
+                            <input class="checkbox-content__box" type="checkbox" id="termCon">
+                            <label for="termCon" class="checkbox-content__text">I accepted all terms and
+                                conditions</label>
+                        </div>
+                    </div>
+                    <div class="input button-wrapper">
+                        <button class="button " type="submit" value="Signup">Sign Up</button>
+                    </div>
+                </form>
+                <div class="login-signup">
+                    <span class="text">Already a member?
+                        <a href="#" class="link-text login-link">Login Now</a>
+                    </span>
                 </div>
             </div>
         </div>
-
-        <footer class="footer">
+        <div class="footer">
             <div class="copyright">
                 Copyright &copy; <span id="year"></span>.All rights reserved.
             </div>
-        </footer>
-    </section>
+        </div>
+    </div>
     <script src="../js/script.js"></script>
-    <script src="../js/form-validation.js"></script>
+    <script src="../js/form-validation.js" type="module"></script>
 </body>
 
 </html>
