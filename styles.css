@@ -404,6 +404,12 @@ body {
   background: #fff;
   border-radius: 5px;
 }
+.nav__list-items:hover .nav__list-link {
+  color: #0a2558;
+}
+.nav__list-items:hover .nav__list-link .icon {
+  color: #0a2558;
+}
 .nav__list-link {
   color: #fff;
   text-decoration: none;

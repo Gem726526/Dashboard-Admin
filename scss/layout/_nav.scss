@@ -20,7 +20,13 @@
                 background: $light-color;
                 border-radius: 5px;
 
+                .nav__list-link {
+                    color: $primary-color;
 
+                    .icon {
+                        color: $primary-color;
+                    }
+                }
             }
         }
 

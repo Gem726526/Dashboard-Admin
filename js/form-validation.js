@@ -160,12 +160,12 @@ if (editUserForm) {
 }
 
 const addUserForm = document.querySelector("#add-user-form");
-export function addUserFormValidation() {
+export const addUserFormValidation = () => {
   const name = document.querySelector(".add-name-js"),
     email = document.querySelector(".add-email-js");
   let isFormValid = checkUsername(name) && checkEmail(email);
   return isFormValid;
-}
+};
 if (addUserForm) {
   addUserForm.addEventListener("click", addUserFormValidation);
 }

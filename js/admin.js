@@ -1,4 +1,4 @@
-
+import {addUserFormValidation}  from './form-validation.js'
 
 const addPopup = document.querySelector("#add-item-popup"),
   editPopup = document.querySelector("#edit-item-popup"),
@@ -8,7 +8,7 @@ const addPopup = document.querySelector("#add-item-popup"),
 let activeUserIndex;
 
 //activating the add item pop-up
-function addItemPopup() {
+ function addItemPopup() {
   addPopup.classList.add("active");
 }
 
@@ -106,3 +106,4 @@ document.querySelector("#add-user-btn").addEventListener("click", addUser);
 document
   .querySelector("#edit-user-btn-js")
   .addEventListener("click", saveEdits);
+document.querySelector("#add-user-popup-js").addEventListener("click", addItemPopup);
